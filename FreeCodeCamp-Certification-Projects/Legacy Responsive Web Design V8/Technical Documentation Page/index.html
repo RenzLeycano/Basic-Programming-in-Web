@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>
+        Java Documentation
+      </header>
+      <a href="#Introduction_to_Java" class="nav-link">Introduction to Java</a>
+      <a href="#Selective_Structures" class="nav-link">Selective Structures</a>
+      <a href="#Iterative_Structures" class="nav-link">Iterative Structures</a>
+      <a href="#Data_Structures" class="nav-link">Data Structures</a>
+      <a href="#Object-Oriented_Programming_Concepts" class="nav-link">Object-Oriented Programming Concepts</a>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction_to_Java">
+        <header class="header">
+          <h1>Introduction to Java</h1>
+        </header>
+        <article>
+          <p>
+            Developed by Sun Microsystems in the mid-1990s, Java is an object-oriented programming language that is versatile, efficient, and platform independence. It is usually used to operates various applications including web development, mobile applications, and enterprise software.
+          </p>
+          <p>
+            Let us start with basics of Java, such as its structure, printing statements, and input functions.
+          </p>
+        </article>
+        <ul class="sub-topics">
+          <li>
+            <h3 class="sub-topic header">Basic Structure</h3>
+            <p>
+              The basic structure of Java consists of the <code>main()</code> method, which executes your program.
+            </p>
+            <p>
+              <code>//Comments</code> allow better code readability and clarity, it does not get executed when the program is ran.
+            </p>
+            <p>
+              Statements are the instructions inside methods that are executed in the program. 
+            </p>
+          </li>
+          <div class="code-snipet">
+            <code>
+              public class Main { <span class="comment">//This is a comment.</span><br/>
+                <span class="indent">
+                  public static void main(String[] args) {
+                    <br/>
+                  <span class="indent">
+                    System.out.println("Print Statement");</span><br/>
+                }</span><br/>
+              }
+            </code>
+          </div>
+
+          <li>
+            <h3 class="sub-topic header">Data Types and Variables</h3>
+            <p>
+              Variables are capable of storing information while the program is being executed. For every variable, there must be a declared data type, which is classified into two:
+              <ul>
+                <li>
+                  <strong>Primitive</strong>:  int, char, float, double, boolean, etc.
+                </li>
+                <li>
+                  <strong>Non-primitive</strong>: Classes, interfaces, arrays, lists, tuples, sets.
+                </li>
+              </ul>
+            </p>
+            <p>
+              For now, let's focus on the Primitive data types. The data type is declared first and then the variable is set.
+            </p>
+          </li>
+          <div class="code-snipet">
+            <code>
+              int integer = 10; </br>
+              float decimal = 10.23; </br>
+              double alsoDecimals = 10.333333; </br>
+              boolean trueOrFalse = true;
+            </code>
+          </div>
+
+
+          <li>
+            <h3 class="sub-topic header">Input Statement</h3>
+            <p>
+              Input statements are used to collect data from the program user. Their data can then be assigned to a variable.
+            </p>
+            <p>
+              Before writing an input statement, a Scanner object must first be imported and instantiated.
+            </p>
+          </li>
+          <div class="code-snipet">          
+            <code>
+              import java.util.Scanner; <br/>
+              <br/>
+              public class Main { <br/>
+                <span class="indent">
+                  static Scanner input = new Scanner(System.in); <br/>
+                  public static void main(String[] args) {
+                    <br/>
+                  <span class="indent">
+                    <br/>
+                    int number; <br/>
+                    String name; <br/>
+                    double dNo;
+                    <br/><br/>
+                    System.out.print("Please enter a number: ");
+                    <br/>
+                    number = input.nextInt(); input.nextLine(); <span class="comment">//ONLY add an additional input.nextLine(); when inputting a String after an int.</span>
+                    <br/><br/>
+                    System.out.print("Please enter your name: ");
+                    <br/>
+                    name = input.nextLine();
+                    <br/><br/>
+                    System.out.print("Please enter a double: ");
+                    <br/>
+                    dNo = input.nextDouble();
+                    <br/>
+                    </span><br/>
+                }</span><br/>
+              }
+            </code>
+          </div>
+
+          <li>
+            <h3 class="sub-topic header">Operations</h3>
+            <p>
+              Java can perform basic mathematical operations:
+              <ul>
+                <li>Addition: +</li>
+                <li>Subtraction: -</li>
+                <li>Multiplication: *</li>
+                <li>Division: /</li>
+                <li>Modulo (Remainder Division): </li>
+                <li>Increment: ++</li>
+                <li>Decrement: --</li>             
+              </ul>
+            </p>
+          </li>
+          <div class="code-snipet">
+            <code>
+              int add = 10 + 10; </br>
+              float minus = 10.23 - 5.2; </br>
+              double mulAndDiv = 10.333333 * 2 / 3; </br>
+              int modulO = 5 % 2; <span class="comment">//Output = 1</span>
+            </code>
+          </div>
+        </ul>
+      </section>
+
+
+      <section class="main-section" id="Selective_Structures">
+        <header class="header">
+          <h1>Selective Structures</h1>
+        </header>
+        <article>
+          <p>
+            A selective structure is a decision-making program that bases its value on the conditions the programmer set. It allows varied execution paths based whether certain conditions are met.
+          </p>
+          <p>
+            The following are key relational and boolean operators that can be useful when creating a condition for selective structures:
+          </p>
+          <ul>
+            <li>== : equal to</li>
+            <li>!= : not equal to</li>
+            <li>&gt; : greater than</li>
+            <li>&lt; : less than</li>
+            <li>&gt;= : greater than or equal to</li>
+            <li>&lt;= : less than or equal to</li>
+            <li>&amp;&amp; : AND (if both operands are true, it returns true, otherwise false)</li>
+            <li>|| : OR (if one of the operands are true, it returns true, otherwise false)</li>
+            <li>! : NOT (reverses logical state)</li>
+          </ul>
+        </article>
+        
+        <ul class="sub-topics">
+          <li>
+            <h3 class="sub-topic header">If...Else</h3>
+            <p>
+              If...Else allows the execution of different code blocks based on the set conditions. While an If statement is mandatory, an Else statement can be optional, although no execution is done if the condition in the if statement is false.
+            </p>
+            <p>
+              If the condition is met or the logical state is <code>true</code>, the code block inside the if statement is executed, otherwise, the else statement.
+            </p>
+          </li>
+          <div class="code-snipet">          
+            <code>
+              int number = 10; 
+              </br></br>
+            if (num % 2 == 0) {</br>
+                <span class="indent">
+                  System.out.println("The number is even.");
+                </span><br/>
+            } else { </br>
+                <span class="indent">
+                  System.out.println("The number is odd.");
+                </span><br/>
+            }
+            </code>
+          </div>
+
+          <li>
+            <h3 class="sub-topic header">Else if</h3>
+            <p>
+              When it comes to selective structures that want execution paths greater than 2, an else if statement can be used.
+            </p>
+            <p>
+              If an if statement or else if statement already has a logical state of <code>true</code>, the rest of the statements will NOT be executed.
+            </p>
+          </li>
+          <div class="code-snipet">
+            <code>
+              int number = 10; 
+              </br></br>
+            if (num == 0) {</br>
+                <span class="indent">
+                  System.out.println("The number is zero.");
+                </span><br/>
+            } else if (num % 2 == 0) {</br>
+                <span class="indent">
+                  System.out.println("The number is even.");
+                </span><br/>
+            } else { </br>
+                <span class="indent">
+                  System.out.println("The number is odd.");
+                </span><br/>
+            }
+            </code>
+          </div
+          
+          <li>
+            <h3 class="sub-topic header">Switch</h3>
+            <p>
+              A switch statement executes a code block with a <code>case</code> label whose value matches the expression. If the expression doesn't have a match, it falls into <code>default</code>.
+            </p>
+            <p>
+              This is useful when evaluating exact matches for integers, strings, or characters.
+            </p>
+          </li>
+          <div class="code-snipet">          
+            <code class="code-snipet">
+              String number = "10"; 
+              </br></br>
+              switch (number) {</br>
+                  <span class="indent">
+                    case "1":<br/>
+                      <span class="indent">
+                        System.out.println("One"); <br/>
+                        break;
+                      </span>
+                  <br/>
+                    case "5":<br/>
+                      <span class="indent">
+                        System.out.println("Five"); <br/>
+                        break;
+                      </span>
+                  <br/>
+                    case "10":<br/>
+                      <span class="indent">
+                        System.out.println("Ten"); <br/>
+                        break;
+                      </span>
+                  <br/>
+                    default:<br/>
+                      <span class="indent">
+                        System.out.println("A number."); <br/>
+                        break;
+                      </span>
+                  </span><br/>
+              }
+            </code>
+          </div>
+        </ul>
+      </section>
+
+
+
+      <section class="main-section" id="Iterative_Structures">
+        <header class="header">
+          <h1>Iterative Structures</h1>
+        </header>
+        <article>
+          <p>
+            An iterative structure allows repeated execution of a specific code block if a condition is met. This is useful for automating repetitive tasks.
+          </p>
+          <p>
+            The following are the four types of loops:
+          </p>
+          <ul>
+            <li><code>while</code> loop: evaluates a condition before executing a codeblock.</li>
+            <li><code>do...while</code> loop: executes a codeblock first then evaluates the condition.</li>
+            <li><code>for</code> loop: made up of three parts; initialization (executed at the beginning of a loop), condition (evaluated before each execution), increment (executed after the loop, continues if the condition remains true).</li>
+            <li><code>for-each</code> loop: iterates collections without the need of using indeces.</li>
+          </ul>
+        </article>
+
+
+        <ul class="sub-topics">
+          <li>
+            <h3 class="sub-topic header">while loop</h3>
+            <p>
+              This loop allows a code block to be executed repeatedly only if the specified condition remains <code>true</code>.
+            </p>
+            <p>
+              If the condition is <code>false</code>, the code block is not executed, and the loop will stop or not run.
+            </p>
+          </li>
+          <div class="code-snipet">          
+            <code>
+              int counter = 0; 
+              </br></br>
+            while (counter &lt;= 5) {</br>
+                <span class="indent">
+                  System.out.println(counter); <br/>
+                  counter++;
+                </span><br/>
+            }
+            </code>
+          </div>
+
+          <li>
+            <h3 class="sub-topic header">do...while loop</h3>
+            <p>
+              This loop allows a code block to be executed first. Then a condition will be evaluated. Once the condition is <code>true</code>, the loop iterates again.
+            </p>
+            <p>
+              Even though a condition is false initially, the code block will still be executed once before the condition is evaluated. If the condition remains false, then the loop won't iterate.
+            </p>
+          </li>
+          <div class="code-snipet">          
+            <code>
+              int counter = 10; 
+              </br></br>
+            do {</br>
+                <span class="indent">
+                  System.out.println("counter"); <br/>
+                  counter--;
+                </span><br/>
+            } while (counter &gt; 5)
+            </code>
+          </div>
+          
+          <li>
+            <h3 class="sub-topic header">for loop</h3>
+            <p>
+              This is a concise way of setting up a iteration structure.
+            </p>
+            <div class="code-snipet">          
+            <code>
+            for (initialization; condition; increment/decrement) { } 
+              <br/><br/>
+              <span class="comment">//This one can be useful when iterating through collections like arrays.</span>
+              <br/>
+            for (datatype element : collection_structure) { }
+            </code>
+            <p>
+              This is generally the most useful and reliable loop out of all the loop types. 
+            </p>
+          </li>
+          <div class="code-snipet">          
+            <code>
+              for(int i = 0; i < 10; i++) {</br>
+                  <span class="indent">
+                    System.out.println(i);
+                  </span><br/>
+              }
+            </code>
+          </div>
+        </ul>
+      </section>
+
+
+
+      <section class="main-section" id="Data_Structures">
+        <header class="header">
+          <h1>Data Structures</h1>
+        </header>
+        <article>
+          <p>
+            A specialized format for organizing, storing, managing, and manipulating data where operations like insertion, deletion, searching, and updating can be performed efficiently.
+          </p>
+          <p>
+            For now, let's discuss the basics of data structures and how to code them.
+          </p>
+          <h4>Iteration</h4>
+          <div class="code-snipet">          
+            <code>
+              for(String element : data_structure) { <br/>
+                <span class="indent">
+                  System.out.println(element);
+                </span><br/>
+              }<br/><br/>
+            </code>
+          </div>
+        </article>
+        <ul>
+          <li>
+            <h3 class="sub-topic header">Arrays</h3>
+            <p>
+              An array in Java can hold multiple values of a single data type. Its length is also fixed after creation.
+            </p>
+          </li>
+          <div class="code-snipet">          
+            <code>
+            data_type[] var_array = new data_type[size];
+            <br/><br/>
+            int[] numbers = new int[5]; <span class="comment">//Declaration and Creation</span>
+            <br/>
+            String[] words = {"Java", "Python", "HTML", "CSS"}; <span class="comment">//Creation with values</span>
+            <br/><br/>
+            numbers[0] = 1; <span class="comment">//Changing or inserting elements</span>
+            <br/>
+            System.out.println(words[1]); <span class="comment">//Accessing elements</span>
+            <br/>
+          </code>
+          </div>
+          
+
+          <li>
+            <h3 class="sub-topic header">Lists</h3>
+            <p>
+              A list in Java is an ordered data structure, but unlike arrays, its length is not fixed.
+            </p>
+            <h4>NOTE:</h4>
+            <p>
+              Keep in mind that when using lists, certain utilities need to be imported:
+            </p>
+            <code>
+              import java.util.ArrayList; <br/>
+              import java.util.*; <span class="comment">//universal import</span>
+            </code>
+          </li>
+
+          <div class="code-snipet">          
+            <code>
+              List&lt;data_type&gt; var_list = new ArrayList&lt;data_type&gt;();
+              <br/><br/>
+              List&lt;String&gt; names = new ArrayList&lt;String&gt;();
+              <br/>
+              names.add(0, "Gian"); <span class="comment">//Adding or inserting elements</span><br/>
+              String name = names.get(0); <span class="comment">//Accessing elements</span><br/>
+              names.set(0, "Gian Aniel"); <span class="comment">//Replacing elements</span><br/>
+              names.remove(0); <span class="comment">//Remove by index</span><br/>
+            </code>
+          </div>
+          
+          <li>
+            <h3 class="sub-topic header">Sets</h3>
+            <p>
+              A set in Java is an unordered data structure, where every element must be unique. Duplicate values are removed and only one of said value must exist.
+            </p>
+            <h4>NOTE:</h4>
+            <p>
+              Keep in mind that when using sets, certain utilities need to be imported:
+            </p>
+            <code>
+              import java.util.Set <br/>
+              import java.util.*; <span class="comment">//universal import</span>
+            </code>
+          </li>
+
+          <div class="code-snipet">          
+            <code>
+              Set&lt;data_type&gt; var_set = new HashSet&lt;&gt;();
+              <br/><br/>
+              Set&lt;String&gt; studNo = new HashSet&lt;&gt;();
+              <br/>
+              names.add("204444"); <span class="comment">//Adding or inserting elements</span><br/>
+              boolean ifExists = names.contains("203334"); <span class="comment">//Check for an element</span><br/>
+              lengthSet = names.size(); <span class="comment">//Length of a set</span><br/>
+              names.remove("204444"); <span class="comment">//Removing elements</span><br/>
+            </code>
+          </div>
+        </ul>
+      </section>
+
+
+      <section class="main-section" id="Object-Oriented_Programming_Concepts">
+        <header class="header">
+          <h1>Object-Oriented Programming Concepts</h1>
+        </header>
+        <article>
+          <p>
+            Classes are an essential aspect of object-oriented programming, acting as the blueprints for objects. Classes allow better code organization and management.
+          </p>
+          <ul>
+            <li><strong>Fields</strong>: defines the state of the object</li>
+            <li><strong>Constructor</strong>: initializing the object's fields</li>
+            <li><strong>Methods</strong>: behavior of the object</li>
+            <li><strong>Access Modifiers</strong>: specifies the visibility of fields, methods, and classes</li> 
+          </ul>
+          <div class="code-snipet">          
+            <code>
+              public class ClassName { <br/>
+                <span class="indent">
+                  accessMod dataType field1; <span class="comment">//Access modifiers are optional, default to public</span>
+                  <br/>
+                  dataType field2;
+                  <br/><br/>
+                  public ClassName(dataType parameter1, dataType parameter2) {<br/>}
+                  <br/><br/>
+                  returnType MethodName(dataType parameter1, dataType parameter2) {<br/>}
+
+                </span><br/>
+              }
+              </code>
+            </div>
+        </article>
+        <ul>
+          <li>
+            <h3 class="sub-topic header">Methods</h3>
+            <p>
+              A method is a code block that can perform a task when called upon. It can have receive parameters, which can be set as local variables in the method. Parameters and arguments passed along the method and the main program and both are optional.
+            </p>
+          </li>
+          <div class="code-snipet">          
+            <code>
+              returnType MethodName(dataType parameter1, dataType parameter2) {<br/>
+                <span class="indent">
+                  <span class="comment">//code block</span><br/>
+                  return value; <span class="comment">//if returnType is NOT void</span>
+                </span><br/>
+              }
+            </code>
+          </div>
+          <h4>Calling a Method</h4>
+          <div class="code-snipet">          
+            <code>
+              objectName.methodName(argument1, argument2);
+            </code>
+          </div>
+
+
+          <li>
+            <h3 class="sub-topic header">Constructors</h3>
+            <p>
+              A constructor in Java is a method that is used to initialize fields in an object. Its name must be exactly the same as the class name.
+            </p>
+            <p>
+              A default constructor initialize fields to their default value such as 0 for numeric data types, false for booleans, and null if the programmer did not define any constructor. A default constructor can be used to initialize values when no unique data is provided from the main program.
+            </p>
+            <p>
+              A parameterized constructor initialize fields with unique values provided from the main program.
+            </p>
+          </li>
+          <div class="code-snipet">          
+            <code>
+            class ClassName(dataType parameter1, dataType parameter2) {<br/>
+              <span class="indent">
+                accessMod dataType field1;<br/>
+                accessMod dataType field2;<br/><br/>
+                public ClassName() { <br/> 
+                <span class="indent">
+                  <span class="comment">//Default Constructor</span><br/>
+                  this.field1 = null; <br/>
+                  this.field2 = null; </span><br/>
+                } <br/><br/>
+                public ClassName(dataType parameter1, dataType parameter2) { <br/>
+                <span class="indent">
+                  <span class="comment">//Parameterized Constructor</span><br/>
+                  this.field1 = parameter1; <br/>
+                  this.field2 = parameter2; </span><br/>
+                } <br/>
+              </span><br/>
+            }
+            </code>
+          </div>
+        </ul>
+      </section>
+      
+      
+    </main>
+    
+  </body>
+</html>

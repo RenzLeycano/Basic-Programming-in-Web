@@ -1,0 +1,117 @@
+:root {
+  --background-color1: rgb(45, 45, 45);
+  --background-color2: rgb(28, 28, 28);
+  --background-color3: rgb(60, 60, 60);
+  --accent-color1: rgb(1, 255, 18);
+  --accent-color2: rgba(1, 255, 18, 0.5);
+
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+p, .nav-link {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+body {
+  background-color: var(--background-color2);
+}
+.indent {
+  display: inline-block;
+  padding-left: 1em;
+}
+.comment {
+  color: red;
+}
+code {
+  font-size: 1.3em;
+  background-color: var(--background-color3);
+  padding: 0 0.3em;
+  border-radius: 5px;
+}
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  background-color: var(--background-color1);
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  padding-bottom: 1em;
+}
+  #navbar header{
+    font-size: 1.8rem;
+    padding: 0.5em 0.5em;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    color: var(--accent-color1);
+    text-align: center;
+  }
+  #navbar .nav-link {
+    text-wrap: wrap;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    text-align: center;
+  }
+  .nav-link:hover {
+    background-color: var(--accent-color2);
+    border-radius: 5px;
+  }
+  #main-doc {
+    position: absolute;
+    height: 80%;
+    bottom: 0;
+    left: 0;
+    padding: 1em 2em 2em;
+    color: white;
+  }
+  .header {
+    font-family: "Courier New", Courier, monospace;
+    padding: 1.5em 0;
+  }
+  p {
+    padding: 0 0 0.5em 1.5em;
+    text-align: justify;
+  }
+  .sub-topics {
+    list-style: none;
+  }
+  .sub-topics ul, article > ul{
+    padding: 1em 5em;
+  }
+  .code-snipet {
+    background-color: var(--background-color3);
+    width: 100%;
+    margin: 1em 2em 1em 1em;
+    padding: 1em;
+    border-radius: 5px;
+    color: var(--accent-color1);
+  }
+
+@media (min-width: 1015px) {
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    height: 100vh;
+    width: 25%;
+  }
+  #main-doc {
+    position: relative;
+    width: 75%;
+    float: right;
+  }
+  #navbar .nav-link {
+    font-size: 1.3em;
+    padding: 1.5em 1em;
+  }
+}
