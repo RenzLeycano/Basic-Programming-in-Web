@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ForSoli Survey</title>
+    <meta charset="utf-8"/>
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
+  </head>
+    <header>
+      <h1 id="title">ForSoli Survey Form</h1>
+      <p id="description"><em>Share your thoughts and feedback for a solid future!</em></p>
+    </header>
+    <form id="survey-form">
+      <fieldset>
+        <label for="name" id="name-label">Name<input id="name" type="text" placeholder="Enter your name" required></label>
+        <label for="email" id="email-label">Email<input id="email" type="email" placeholder="Enter your email"  required></label>
+        <label for="number" id="number-label">Age (optional)<input id="number" type="number" min="8" max="120" placeholder="Enter your age" ></label>
+        <label> Occupation
+          <select id="dropdown">
+            <option value="">Select one</option>
+            <option value="student">Student</option>
+            <option value="project-manager">Project Manager</option>
+            <option value="researcher">Researcher</option>
+            <option value="journalist">Journalist</option>
+            <option value="educator">Educator</option>
+            <option value="researcher">Researcher</option>
+            <option value="consultant">Consultant</option>
+            <option value="others">Others</option>
+          </select>
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend name="satisfaction-rating">
+          How satisfied are you in ForSoli's features and tools?
+        </legend>
+        <label for="5" ><input type="radio" value="satisfied" id="5" name="rating" class="inline"> Satisfied</label>
+        <label for="4"><input type="radio" value="somewhat-satisfied" id="4" name="rating" class="inline"> Somewhat Satisfied</label>
+        <label for="3"><input type="radio" id="3" value="neutral" name="rating" class="inline" checked> Neutral</label>
+        <label for="2"><input type="radio" id="2" value="somewhat-dissatisfied" name="rating" class="inline"> Somewhat Dissatisfied</label>
+        <label for="1"><input type="radio" id="1" value="dissatisfied" name="rating" class="inline"> Dissatisfied</label>
+      </fieldset>
+      <fieldset>
+        <legend>Which feature/s would you like to be improved?</legend>
+        <label><input type="checkbox" value="design-and-layout" name="improvement" class="inline"> Design/Layout</label>
+        <label><input type="checkbox" value="tools" name="improvement" class="inline"> Availability of Tools</label>
+        <label><input type="checkbox" value="accessibility" name="improvement" class="inline"> Accessibility</label>
+        <label><input type="checkbox" value="multimedia" name="improvement" class="inline"> Multimedia Support</label>
+        <label><input type="checkbox" value="organization" name="improvement" class="inline"> Organization</label>
+        <label for="improve-others"><input type="checkbox" value="others" name="improvement" class="inline"> Others: <input type="text" id="improve-others" class="inline others" placeholder="please specify..."></label>
+      </fieldset>
+      <fieldset>
+        <legend>Comments and Suggestions</legend>
+        <label for="comment-suggestion">
+          <textarea name="comment-suggestion" placeholder="I would like to suggest..." required></textarea>
+        </label>
+      </fieldset>
+      <input type="submit" value="Submit" id="submit">
+    </form>
+  </body>
+</html>
