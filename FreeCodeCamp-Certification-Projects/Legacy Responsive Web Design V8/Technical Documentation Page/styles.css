@@ -16,6 +16,8 @@ p, .nav-link {
 }
 body {
   background-color: var(--background-color2);
+  display: flex;
+  flex-direction: column;
 }
 .indent {
   display: inline-block;
@@ -63,12 +65,14 @@ code {
     border-radius: 5px;
   }
   #main-doc {
-    position: absolute;
-    height: 80%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     bottom: 0;
     left: 0;
     padding: 1em 2em 2em;
     color: white;
+    padding-top: 200px;
   }
   .header {
     font-family: "Courier New", Courier, monospace;
@@ -94,6 +98,9 @@ code {
   }
 
 @media (min-width: 1015px) {
+  body {
+    display: block;
+  }
   #navbar {
     position: fixed;
     top: 0;
@@ -109,6 +116,7 @@ code {
     position: relative;
     width: 75%;
     float: right;
+    padding-top: 0;
   }
   #navbar .nav-link {
     font-size: 1.3em;
